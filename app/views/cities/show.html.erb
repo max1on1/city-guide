@@ -32,10 +32,10 @@
 	<i><%= excursion.about %> </i><br />
 	</p>
 	<tr>
-        <td><%= link_to 'Destroy', excursion_path(@city, excursion), method: :delete, remote: true, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', excursion_path( excursion ), method: :delete, remote: true, data: { confirm: 'Are you sure?' } %></td>
   </tr>
   	<tr>
-        <td><%= link_to 'Show', excursion_path(@city, excursion) %></td>
+        <td><%= link_to 'Show', excursion_path( excursion ) %></td>
   </tr>
 <% end %>
 

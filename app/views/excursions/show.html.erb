@@ -11,6 +11,19 @@
 	<p>
 	<i><%= comment.body %> </i><br />
 	</p>
+  <p>
+  <i><%= comment.excursion_id %> </i><br />
+  </p>
+  <p>
+  <i><%= comment.id %> </i><br />
+  </p>
+   <div>
+    <tr>
+      <td>
+        <%= link_to 'Destroy', comment_path( comment ), method: :delete, remote: true, data: { confirm: 'Are you sure?' } %>
+      </td>
+    </tr>
+  </div>
 
 <% end %>
 
@@ -26,7 +39,6 @@
   </div>
    <div class="field">
     <%= f.submit %>
-
   </div>
 
 <% end %>
