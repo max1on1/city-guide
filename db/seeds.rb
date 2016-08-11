@@ -5,3 +5,5 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Comment.create( autor: 'YOBA' , body: 'YOBACOMMENT', excursion_id: 1 )
+
