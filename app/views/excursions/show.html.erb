@@ -1,0 +1,32 @@
+
+<strong>Excursion:</strong><br>
+  <%= @excursion.title %>
+</p>
+
+<% @excursion.comments.each do |comment| %>
+	<hr>
+	<p>
+	<i><%= comment.autor %> </i><br />
+	</p>
+	<p>
+	<i><%= comment.body %> </i><br />
+	</p>
+
+<% end %>
+
+<%= form_for([@excursion, @excursion.comments.build]) do |f| %>
+	  <div class="field">
+    <%= f.label :autor %>
+    <%= f.text_area :autor %>
+  </div>
+
+  <div class="field">
+    <%= f.label :body %>
+    <%= f.number_field :body %>
+  </div>
+   <div class="field">
+    <%= f.submit %>
+
+  </div>
+
+<% end %>

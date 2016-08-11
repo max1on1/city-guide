@@ -1,0 +1,77 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>City:</strong>
+  <%= @city.city %>
+</p>
+
+<%= link_to 'Edit', edit_city_path(@city) %> |
+<%= link_to 'Back', cities_path %>
+
+<% @city.excursions.each do |excursion| %>
+	<hr>
+	<p>
+	<i><%= excursion.title %> </i><br />
+	</p>
+	<p>
+	<i><%= excursion.phone %> </i><br />
+	</p>
+	<p>
+	<i><%= excursion.duration %> </i><br />
+	</p>
+	<p>
+	<i><%= excursion.title %> </i><br />
+	</p>
+	<p>
+	<i><%= excursion.imgurl %> </i><br />
+	</p>
+	<p>
+	<i><%= excursion.price %> </i><br />
+	</p>
+	<p>
+	<i><%= excursion.about %> </i><br />
+	</p>
+	<tr>
+        <td><%= link_to 'Destroy', excursion_path(@city, excursion), method: :delete, remote: true, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+  	<tr>
+        <td><%= link_to 'Show', excursion_path(@city, excursion) %></td>
+  </tr>
+<% end %>
+
+<%= form_for([@city, @city.excursions.build]) do |f| %>
+	  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_area :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :phone %>
+    <%= f.number_field :phone %>
+  </div>
+
+  <div class="field">
+    <%= f.label :duration %>
+    <%= f.number_field :duration %>
+  </div>
+
+  <div class="field">
+    <%= f.label :imgurl %>
+    <%= f.text_area :imgurl %>
+  </div>
+
+  <div class="field">
+    <%= f.label :price %>
+    <%= f.text_field :price %>
+  </div>
+
+  <div class="field">
+    <%= f.label :about %>
+    <%= f.text_area :about %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
